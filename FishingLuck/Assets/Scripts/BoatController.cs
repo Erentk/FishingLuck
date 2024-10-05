@@ -22,6 +22,7 @@ public class BoatController : MonoBehaviour
     public AudioClip moveSound; // Ses efekti için AudioClip
     private AudioSource audioSource; // Ses çalma için AudioSource
     private GameManager gameManager;
+    public GamePause gamePause; // GamePause scriptine referans
 
     void Start()
     {
@@ -131,6 +132,8 @@ public class BoatController : MonoBehaviour
         }
 
         winText.gameObject.SetActive(true); // Kazanan metnini göster
+
+        gamePause.EndGame(); // Oyun sonu fonksiyonunu çaðýr
 
         // Oyun sonunda balýk görselini gizle
         gameManager.HideFish();
